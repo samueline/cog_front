@@ -1,0 +1,29 @@
+<div class="login__container min-h-screen ">
+    <p-card header="Bienvenido"  [style]="{'padding': '2rem','width': '30rem','display':'flex','justify-content':'center','align-items':'center'}">
+      <form #loginForm="ngForm">
+        <div class="flex flex-column gap-3">
+          <div>
+            <label class="text-lg">Email : </label>
+            <br>
+            <input id="float-input" type="text" pInputText class="p-inputtext-lg w-full" [(ngModel)]="loginData.email"
+              name="email" placeholder="ejemplo@hotmail.com">
+          </div>
+          <div>
+            <label class="text-lg" >Password : </label>
+            <br>
+            <span class="p-input-icon-right">
+              <i class="pi {{showPassword ? 'pi-eye-slash' : 'pi-eye'}}" (click)="onShowPassword()"></i>
+              <input type="{{showPassword ? 'text' : 'password'}}" pInputText class="p-inputtext-lg w-full"
+                placeholder="contraseña" [(ngModel)]="loginData.password" name="password">
+            </span>
+          </div>
+         
+        </div>
+        <br>
+        <div class="footer flex flex-column gap-3">
+          <p-button label="Iniciar sesión" class="flex justify-content-center mt-3" (onClick)="onSignIn(loginData)"></p-button>
+          <small>¿No tienes una cuenta? <a routerLink="/register" class="text-white">Registrate aquí</a></small>
+        </div>
+      </form>
+    </p-card>
+  </div>

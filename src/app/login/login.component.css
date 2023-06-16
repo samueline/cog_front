@@ -1,0 +1,4 @@
+.footer ::ng-deep .p-button{
+    width: 100% !important;
+    background-color: rgb(112, 0, 22);
+  }
